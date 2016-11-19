@@ -41,10 +41,10 @@ public class GuiButton implements GuiElement {
 		this.bounds.setH(fm.getLineHeight() + (padding * 2));
 	}
 	
-	public GuiButton(ECall click, String text, Rect bounds, Paint backgroundColor, Paint hoverColor, Paint textColor, Paint textHoverColor, Font font) {
+	public GuiButton(ECall click, String text, Rect bb, Paint backgroundColor, Paint hoverColor, Paint textColor, Paint textHoverColor, Font font) {
 		this(click);
 		this.text = text;
-		this.bounds = bounds;
+		this.bounds = bb;
 		this.backgroundColor = backgroundColor;
 		this.hoverColor = hoverColor;
 		this.textColor = textColor;
@@ -66,7 +66,9 @@ public class GuiButton implements GuiElement {
 		
 		boolean hov = isHovered();
 		
-		RenderUtils.fillRect(bounds.getPos(), bounds.getSize(), (hov) ? this.hoverColor : this.backgroundColor);
+		Vector2 s = bounds.copy().getSize();
+		s.setY(s.getY() + 1);
+		RenderUtils.fillRect(bounds.getPos(), s, (hov) ? this.hoverColor : this.backgroundColor);
 		RenderUtils.fillText(text, bounds.getCenter(), (hov) ? this.textHoverColor : this.textColor, font);
 	}
 	
