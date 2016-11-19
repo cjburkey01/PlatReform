@@ -1,6 +1,7 @@
 package com.cjburkey.platreform.gamestate;
 
 import com.cjburkey.platreform.Util;
+import com.cjburkey.platreform.gamestates.GameStateGame;
 import com.cjburkey.platreform.gamestates.GameStateMenu;
 
 public class GameStateHandler {
@@ -8,6 +9,7 @@ public class GameStateHandler {
 	private GameState current;
 	
 	private GameStateMenu gsm;
+	private GameStateGame gsg;
 	
 	public void tick() {
 		if(current != null) current.tick();
@@ -31,6 +33,11 @@ public class GameStateHandler {
 	public void gotoMenu() {
 		if(gsm == null) gsm = new GameStateMenu();
 		setGameState(gsm);
+	}
+	
+	public void gotoGame() {
+		if(gsg == null) gsg = new GameStateGame();
+		setGameState(gsg);
 	}
 	
 	public GameState getGameState() {

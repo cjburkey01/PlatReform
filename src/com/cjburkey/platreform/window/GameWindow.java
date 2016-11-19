@@ -34,7 +34,7 @@ public class GameWindow {
 		stage.sizeToScene();
 		stage.centerOnScreen();
 		stage.setTitle("PlatReform");
-		stage.setResizable(false);
+		stage.setResizable(true);
 		stage.setOnCloseRequest(e -> PlatReform.getGame().die());
 		stage.show();
 	}
