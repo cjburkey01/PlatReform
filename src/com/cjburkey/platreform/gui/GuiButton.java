@@ -1,10 +1,11 @@
-package com.cjburkey.platreform.render;
+package com.cjburkey.platreform.gui;
 
 import com.cjburkey.platreform.PlatReform;
 import com.cjburkey.platreform.event.ECall;
 import com.cjburkey.platreform.event.EventHandler;
 import com.cjburkey.platreform.math.Rect;
 import com.cjburkey.platreform.math.Vector2;
+import com.cjburkey.platreform.render.RenderUtils;
 import com.sun.javafx.tk.FontMetrics;
 import com.sun.javafx.tk.Toolkit;
 import javafx.geometry.VPos;
@@ -37,8 +38,8 @@ public class GuiButton implements GuiElement {
 		this.font = font;
 		
 		FontMetrics fm = Toolkit.getToolkit().getFontLoader().getFontMetrics(font);
-		this.bounds.setW(fm.computeStringWidth(text) + (padding * 2));
-		this.bounds.setH(fm.getLineHeight() + (padding * 2));
+		this.bounds.setWidth(fm.computeStringWidth(text) + (padding * 2));
+		this.bounds.setHeight(fm.getLineHeight() + (padding * 2));
 	}
 	
 	public GuiButton(ECall click, String text, Rect bb, Paint backgroundColor, Paint hoverColor, Paint textColor, Paint textHoverColor, Font font) {

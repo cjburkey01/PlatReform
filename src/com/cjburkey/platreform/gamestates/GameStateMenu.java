@@ -2,10 +2,10 @@ package com.cjburkey.platreform.gamestates;
 
 import com.cjburkey.platreform.PlatReform;
 import com.cjburkey.platreform.gamestate.GameState;
+import com.cjburkey.platreform.gui.GuiButton;
+import com.cjburkey.platreform.gui.GuiHandler;
 import com.cjburkey.platreform.math.Rect;
 import com.cjburkey.platreform.math.Vector2;
-import com.cjburkey.platreform.render.GuiButton;
-import com.cjburkey.platreform.render.GuiHandler;
 import com.cjburkey.platreform.render.RenderUtils;
 import javafx.scene.paint.Color;
 

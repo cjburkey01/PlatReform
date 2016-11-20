@@ -1,6 +1,6 @@
 package com.cjburkey.platreform.gamestate;
 
-import com.cjburkey.platreform.render.GuiHandler;
+import com.cjburkey.platreform.gui.GuiHandler;
 
 public interface GameState {
 	

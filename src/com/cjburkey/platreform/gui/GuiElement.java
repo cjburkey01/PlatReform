@@ -1,4 +1,4 @@
-package com.cjburkey.platreform.render;
+package com.cjburkey.platreform.gui;
 
 import com.cjburkey.platreform.math.Vector2;
 
