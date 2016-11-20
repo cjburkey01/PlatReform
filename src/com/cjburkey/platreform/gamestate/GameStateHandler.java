@@ -6,7 +6,7 @@ import com.cjburkey.platreform.gamestates.GameStateMenu;
 
 public class GameStateHandler {
 	
-	private GameState current;
+	private IGameState current;
 	
 	private GameStateMenu gsm;
 	private GameStateGame gsg;
@@ -23,7 +23,7 @@ public class GameStateHandler {
 		if(current != null) current.gui();
 	}
 	
-	public void setGameState(GameState s) {
+	public void setGameState(IGameState s) {
 		if(current != null) current.exit(s);
 		s.enter(current);
 		current = s;
@@ -40,7 +40,7 @@ public class GameStateHandler {
 		setGameState(gsg);
 	}
 	
-	public GameState getGameState() {
+	public IGameState getGameState() {
 		return current;
 	}
 	

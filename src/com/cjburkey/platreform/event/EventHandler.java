@@ -17,21 +17,21 @@ public class EventHandler {
 		}
 	}
 	
-	public static final int addListener(String eventName, ECall onCall) { listeners.add(new EventListener(eventName, onCall)); return listeners.size() - 1; }
+	public static final int addListener(String eventName, IECall onCall) { listeners.add(new EventListener(eventName, onCall)); return listeners.size() - 1; }
 	public static final void remListener(int i) { listeners.remove(i); }
 	public static final void clear() { listeners.clear(); }
 	
 	private static class EventListener {
 		private String listen;
-		private ECall call;
+		private IECall call;
 		
-		public EventListener(String l, ECall c) {
+		public EventListener(String l, IECall c) {
 			this.listen = l;
 			this.call = c;
 		}
 		
 		public String getName() { return listen; }
-		public ECall getToCall() { return call; }
+		public IECall getToCall() { return call; }
 	}
 	
 }

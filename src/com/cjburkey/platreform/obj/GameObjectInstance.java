@@ -5,9 +5,9 @@ import com.cjburkey.platreform.math.Vector2;
 public class GameObjectInstance {
 	
 	private Vector2 position;
-	private GameObject obj;
+	private IGameObject obj;
 	
-	public GameObjectInstance(GameObject obj) {
+	public GameObjectInstance(IGameObject obj) {
 		this.obj = obj;
 	}
 	
@@ -16,6 +16,6 @@ public class GameObjectInstance {
 	public void perSecond() { obj.perSecond(this); }
 	
 	public Vector2 getPosition() { return position; }
-	public GameObject getObject() { return obj; }
+	public IGameObject getObject() { return obj; }
 	
 }

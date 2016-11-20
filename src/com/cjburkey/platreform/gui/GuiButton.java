@@ -1,7 +1,7 @@
 package com.cjburkey.platreform.gui;
 
 import com.cjburkey.platreform.PlatReform;
-import com.cjburkey.platreform.event.ECall;
+import com.cjburkey.platreform.event.IECall;
 import com.cjburkey.platreform.event.EventHandler;
 import com.cjburkey.platreform.math.Rect;
 import com.cjburkey.platreform.math.Vector2;
@@ -15,7 +15,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 
 @SuppressWarnings("restriction")
-public class GuiButton implements GuiElement {
+public class GuiButton implements IGuiElement {
 
 	private String text;
 	private Rect bounds;
@@ -25,9 +25,9 @@ public class GuiButton implements GuiElement {
 	private Paint textHoverColor;
 	private Font font;
 	
-	private GuiButton(ECall click) { EventHandler.addListener(EventHandler.MOUSE_CLICKED, () -> { if(isHovered()) click.call(); }); }
+	private GuiButton(IECall click) { EventHandler.addListener(EventHandler.MOUSE_CLICKED, () -> { if(isHovered()) click.call(); }); }
 	
-	public GuiButton(ECall click, String text, Vector2 pos, Paint backgroundColor, Paint hoverColor, Paint textColor, Paint textHoverColor, Font font, double padding) {
+	public GuiButton(IECall click, String text, Vector2 pos, Paint backgroundColor, Paint hoverColor, Paint textColor, Paint textHoverColor, Font font, double padding) {
 		this(click);
 		this.bounds = new Rect(pos.getX(), pos.getY(), 0, 0);
 		this.text = text;
@@ -42,7 +42,7 @@ public class GuiButton implements GuiElement {
 		this.bounds.setHeight(fm.getLineHeight() + (padding * 2));
 	}
 	
-	public GuiButton(ECall click, String text, Rect bb, Paint backgroundColor, Paint hoverColor, Paint textColor, Paint textHoverColor, Font font) {
+	public GuiButton(IECall click, String text, Rect bb, Paint backgroundColor, Paint hoverColor, Paint textColor, Paint textHoverColor, Font font) {
 		this(click);
 		this.text = text;
 		this.bounds = bb;

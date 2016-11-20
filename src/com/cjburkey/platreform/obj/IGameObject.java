@@ -1,6 +1,6 @@
 package com.cjburkey.platreform.obj;
 
-public interface GameObject {
+public interface IGameObject {
 	
 	public void tick(GameObjectInstance inst);
 	public void render(GameObjectInstance inst);

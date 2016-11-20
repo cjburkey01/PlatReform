@@ -5,15 +5,15 @@ import java.util.List;
 
 public class GuiHandler {
 	
-	private final List<GuiElement> els = new ArrayList<GuiElement>();
+	private final List<IGuiElement> els = new ArrayList<IGuiElement>();
 	
 	public void render() {
-		for(GuiElement e : els) {
+		for(IGuiElement e : els) {
 			e.render();
 		}
 	}
 	
-	public void addElement(GuiElement e) { els.add(e); }
-	public void remElement(GuiElement e) { els.remove(e); }
+	public void addElement(IGuiElement e) { els.add(e); }
+	public void remElement(IGuiElement e) { els.remove(e); }
 	
 }

@@ -1,7 +1,7 @@
 package com.cjburkey.platreform.gamestates;
 
 import com.cjburkey.platreform.PlatReform;
-import com.cjburkey.platreform.gamestate.GameState;
+import com.cjburkey.platreform.gamestate.IGameState;
 import com.cjburkey.platreform.gui.GuiButton;
 import com.cjburkey.platreform.gui.GuiHandler;
 import com.cjburkey.platreform.math.Rect;
@@ -9,7 +9,7 @@ import com.cjburkey.platreform.math.Vector2;
 import com.cjburkey.platreform.render.RenderUtils;
 import javafx.scene.paint.Color;
 
-public class GameStateMenu implements GameState {
+public class GameStateMenu implements IGameState {
 	
 	private GuiHandler handler;
 	
@@ -20,9 +20,9 @@ public class GameStateMenu implements GameState {
 	public void render() { RenderUtils.fillRect(Vector2.zero(), RenderUtils.getSize(), Color.WHITE); }
 	public void gui() { handler.render(); }
 	
-	public void exit(GameState next) { handler = null; }
+	public void exit(IGameState next) { handler = null; }
 
-	public void enter(GameState prev) {
+	public void enter(IGameState prev) {
 		handler = new GuiHandler();
 		
 		double h = 150;
